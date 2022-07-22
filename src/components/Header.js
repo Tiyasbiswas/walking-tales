@@ -5,9 +5,9 @@ import { Container, Button } from 'react-bootstrap'
 export default function Header() {
     return (
         <section>
-        <Navbar bg="light" expand="lg">
+        <Navbar  expand="lg">
             <Container fluid>
-            <Navbar.Brand href="public/images/WalkingTales.png">
+            <Navbar.Brand href=""><img src="./images/logo1.png"/>
            </Navbar.Brand>
             <Navbar.Toggle aria-controls="navbarScroll" />
             <Navbar.Collapse id="navbarScroll">
@@ -25,7 +25,6 @@ export default function Header() {
           Contact
         </Nav.Link>
       </Nav>
-        <Button variant="outline-success">Sign Up</Button>
         <Button variant="outline-success">Login</Button>
 
     </Navbar.Collapse>

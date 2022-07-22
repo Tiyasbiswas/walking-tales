@@ -1,8 +1,8 @@
 import './App.css';
 import Header from './components/Header';
-import Acitivity from './components/Acitivity';
+import Acitivity from './components/Activity';
 import Footer from './components/Footer';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
