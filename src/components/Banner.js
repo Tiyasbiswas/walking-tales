@@ -1,12 +1,12 @@
 
 export default function Banner(){
 return(
-   <div class="container">
-    <div class="row">
-    <div class="col-sm-6">
+   <div className="container">
+    <div className="row">
+    <div className="col-sm-6">
       <img src="https://images.unsplash.com/photo-1536625925840-616261910c62?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8bmF0dXJlJTIwd2Fsa2luZ3xlbnwwfHwwfHw%3D&w=250&q=100" alt=""/>
     </div>
-    <div class="col-sm-6">
+    <div className="col-sm-6">
     <p>  
           I am happy to walk down the road of life with you, my friend. We make good travel buddies. For us,
           it’s not about reaching a destination. Just spending time with you is all I need to feel happy in life.

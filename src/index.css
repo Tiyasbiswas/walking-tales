@@ -5,9 +5,21 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.main-header{
+  margin-left: 80px;
+  margin-right: 140px;
+}
+
+.login-button{
+  max-height: 30px;
+  border-color: #073648;
+  
 }

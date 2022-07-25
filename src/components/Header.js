@@ -1,8 +1,16 @@
+import React, { useState } from 'react';
+import Modal from 'react-bootstrap/Modal';
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
+import Form from 'react-bootstrap/Form';
+import {BrowserRouter ,  Link} from 'react-router-dom';
 import { Container, Button } from 'react-bootstrap'
 
 export default function Header() {
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
     return (
         <section>
         <Navbar className="main-header" expand="lg">
@@ -16,10 +24,42 @@ export default function Header() {
               <Nav.Link href="#">Blog</Nav.Link>
               <Nav.Link href="#">Contact</Nav.Link>
             </Nav>
-            <Button className="mr-5" variant="outline-success" >Login</Button>
+            <Button className="login-button" style={{ color: "white", background: "#073648" }}  onClick={handleShow}>Login</Button>
             </Navbar.Collapse>
   </Container>
 </Navbar>
+<Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          
+        </Modal.Header>
+        <Modal.Body>
+       
+
+
+
+    <Form>
+      <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Control type="email" placeholder="Enter email" />
+        
+      </Form.Group>
+
+      <Form.Group className="mb-3" controlId="formBasicPassword">
+       
+        <Form.Control type="password" placeholder="Password" />
+      </Form.Group>
+      
+      <Button variant="default" style={{ color: "white", background: "#073648" }} type="submit">
+       Login
+      </Button>
+    </Form>
+ <br />
+ <p>Not a member?<Link to="./Register" target='_blank'>Register!</Link></p>
+ 
+        </Modal.Body>
+        
+          
+        
+      </Modal>
 </section>
   )
 }
