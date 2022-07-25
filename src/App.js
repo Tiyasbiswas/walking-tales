@@ -8,11 +8,17 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
   return (
     <div className="App">
-      <Header />
+      <Header/>
+      <br/><br/>
       <Banner/>
+      <br/><br/><br/>
       <Acitivity/>
+      <br/><br/><br/>
+      <br/><br/><br/>
+
       <Footer/>
     </div>
+
   );
 }
 
