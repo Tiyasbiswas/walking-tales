@@ -3,17 +3,21 @@ import Modal from 'react-bootstrap/Modal';
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
 import Form from 'react-bootstrap/Form';
-import {BrowserRouter ,  Link} from 'react-router-dom';
+import {Link, Route, Routes} from 'react-router-dom';
 import { Container, Button } from 'react-bootstrap'
+import Register from './Register';
 
 export default function Header() {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  const handleClick=()=>{
+    window.location.href="/register"
+  }
     return (
         <section>
-        <Navbar className="main-header" expand="lg">
+        <Navbar className="main-header" style={{ paddingLeft: "80px", paddingRight: "90px" }} expand="lg">
             <Container fluid>
             <Navbar.Brand href=""><img src="./images/bigfont-logo.png"/></Navbar.Brand>
             <Navbar.Toggle aria-controls="navbarScroll" />
@@ -53,8 +57,7 @@ export default function Header() {
       </Button>
     </Form>
  <br />
- <p>Not a member?<Link to="./Register" target='_blank'>Register!</Link></p>
- 
+ <p>Not a member? <Link to='/register'>Register!</Link></p>
         </Modal.Body>
         
           
