@@ -4,10 +4,12 @@ import Acitivity from './components/Activity';
 import Banner from './components/Banner';
 import Footer from './components/Footer';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { BrowserRouter } from 'react-router-dom';
 
 function App() {
   return (
     <div className="App">
+     <BrowserRouter>
       <Header/>
       <br/><br/>
       <Banner/>
@@ -15,8 +17,8 @@ function App() {
       <Acitivity/>
       <br/><br/><br/>
       <br/><br/><br/>
-
       <Footer/>
+      </BrowserRouter>
     </div>
 
   );
