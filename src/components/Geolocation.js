@@ -1,5 +1,6 @@
 import { MapContainer, TileLayer, Marker,Popup } from 'react-leaflet'
 import React ,{ useState,useEffect}from 'react';
+import "leaflet/dist/leaflet.css"
 
  export default function Geolocation () {
     const [latitude,setLatitude]=useState(0);
@@ -13,7 +14,7 @@ import React ,{ useState,useEffect}from 'react';
     },[])
     return (
         <>
-        <div className='container-map'>
+        <div className='leaflet-container'>
             <MapContainer center={[latitude, longitude]} zoom={2} scrollWheelZoom={false}>
                 <TileLayer
                      url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"           

@@ -5,6 +5,7 @@ import Geolocation from './Geolocation';
 
 export default function footer(){
     return(
+<<<<<<< HEAD
         <>
 
     <div className="container-fluid text-center text-md-left " style={{ color: "white", background: "#073648" }}  >
@@ -35,6 +36,14 @@ export default function footer(){
 
        
         </>
+=======
+
+        <div>
+        {/* <Geolocation/> */}
+        <SocialFollow/>
+        </div>
+       
+>>>>>>> e9ac71263ad46f6bd0ed5e9394e3ad8841329169
     )
 }
 
