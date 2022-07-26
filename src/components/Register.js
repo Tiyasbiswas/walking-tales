@@ -96,7 +96,6 @@ function Register() {
       <Button type="submit">Submit form</Button>
     </Form>
 
-        render(<Register />);
         <Footer/>
       </div>
     );
