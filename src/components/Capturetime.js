@@ -1,12 +1,37 @@
-import React, { useState } from 'react';
-import TimePicker from 'react-time-picker';
+import React from "react";
+import TimePicker from "rc-time-picker";
+import "@fontsource/roboto";
+import "rc-time-picker/assets/index.css";
 
- export default function Capturetime() {
-  const [value, onChange] = useState('00:00');
+import moment from "moment";
+
+const format = "h:mm a";
+const now = moment().hour(0).minute(0);
+
+export default function App() {
+  const [time, setTime] = React.useState(now);
+  const onChange = (value) => {
+    console.log(value && value.format(format));
+    setTime(value);
+  };
 
   return (
-    <div>
-      <TimePicker onChange={onChange} value={value} />
-    </div>
+<>   <TimePicker
+        styles={{ fontFamily: "Roboto" }}
+        showSecond={false}
+        value={time}
+        className="timercheck"
+        onChange={onChange}
+        format={format}
+        use12Hours
+        minuteStep={1}
+      />
+      <br />
+      <br />
+      <i>
+        Selected time (24h format):&nbsp;
+        {time ? time.format("HH:mm") : "???"}
+      </i>
+    </>
   );
 }
