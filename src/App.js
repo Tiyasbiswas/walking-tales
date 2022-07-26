@@ -7,6 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter,Route, Routes } from 'react-router-dom';
 import Register from './components/Register';
 import Map from './components/Map'
+import LocationMarker from './components/LocationMarker'
 
 
 function App() { 
@@ -16,11 +17,11 @@ function App() {
       <Header/>
       <br/><br/>
       <Banner/>
-      <Map />
       <br/><br/><br/>
       <Acitivity/>
       <br/><br/><br/>
       <br/><br/><br/>
+      <LocationMarker />
       <Footer/>
       <Routes>
         <Route path='/userprofile' element={<Map/>}/>
