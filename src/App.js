@@ -16,6 +16,7 @@ function App() {
       <Header/>
       <br/><br/>
       <Banner/>
+      <Map />
       <br/><br/><br/>
       <Acitivity/>
       <br/><br/><br/>

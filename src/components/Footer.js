@@ -5,7 +5,7 @@ import Geolocation from './Geolocation';
 export default function footer(){
     return(
         <>
-        <Geolocation/>
+        {/* <Geolocation/> */}
         <SocialFollow/>
         </>
     )
