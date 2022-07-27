@@ -13,7 +13,7 @@ export default function SocialFollow() {
       <h6> ❤️ Walking Tales</h6>
       <a
         href="https://www.youtube.com/"
-        className="youtube social"
+        className="youtube social color-"
       >
         <FontAwesomeIcon icon={faYoutube} size="2x" />
       </a>
