@@ -8,7 +8,7 @@ import moment from "moment";
 const format = "h:mm a";
 const now = moment().hour(0).minute(0);
 
-export default function App() {
+export default function Capturetime() {
   const [time, setTime] = React.useState(now);
   const onChange = (value) => {
     console.log(value && value.format(format));
