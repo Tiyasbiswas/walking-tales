@@ -1,20 +1,57 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
 import Form from 'react-bootstrap/Form';
-import {Link, Route, Routes} from 'react-router-dom';
+import {Link, Route, Routes, useNavigate} from 'react-router-dom';
 import { Container, Button } from 'react-bootstrap'
-import Register from './Register';
+import { useCookies } from "react-cookie";
+import { ToastContainer, toast } from "react-toastify";
+import axios from 'axios'
 
 export default function Header() {
   const [show, setShow] = useState(false);
+  const [cookies] = useCookies([]);
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (cookies.jwt) {
+      navigate("/");
+    }
+  }, [cookies, navigate]);
+
+  const [values, setValues] = useState({ email: "", password: "" });
+  const generateError = (error) =>
+    toast.error(error, {
+      position: "bottom-right",
+    });
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      const { data } = await axios.post(
+        "http://localhost:9000/auth/login",
+        {
+          ...values,
+        },
+        { withCredentials: true }
+      );
+      if (data) {
+        if (data.errors) {
+          const { email, password } = data.errors;
+          if (email) generateError(email);
+          else if (password) generateError(password);
+        } else {
+          navigate("/userprofile");
+        }
+      }
+    } catch (ex) {
+      console.log(ex);
+    }
+  };
+
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  const handleClick=()=>{
-    window.location.href="/register"
-  }
+  
     return (
         <section>
         <Navbar className="main-header" style={{ paddingLeft: "80px", paddingRight: "90px" }} expand="lg">
@@ -41,15 +78,19 @@ export default function Header() {
 
 
 
-    <Form>
+    <Form onSubmit={(e) => handleSubmit(e)}>
       <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Control type="email" placeholder="Enter email" />
+        <Form.Control name="email" onChange={(e) =>
+              setValues({ ...values, [e.target.name]: e.target.value })
+            } type="email" placeholder="Enter email" />
         
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formBasicPassword">
        
-        <Form.Control type="password" placeholder="Password" />
+        <Form.Control name="password"  onChange={(e) =>
+              setValues({ ...values, [e.target.name]: e.target.value })
+            } type="password" placeholder="Password" />
       </Form.Group>
       
       <Button variant="default" style={{ color: "white", background: "#073648" }} type="submit">
@@ -63,6 +104,7 @@ export default function Header() {
           
         
       </Modal>
+      <ToastContainer />
 </section>
   )
 }

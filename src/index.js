@@ -5,7 +5,9 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter,Route, Routes } from 'react-router-dom';
 import Register from './components/Register';
-import Map from './components/Map'
+import UserProfile from './components/UserProfile';
+import "react-toastify/dist/ReactToastify.css";
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -13,7 +15,7 @@ root.render(
     <BrowserRouter>
      <Routes>
      <Route path='/' element={<App/>}/>
-        <Route path='/userprofile' element={<Map/>}/>
+        <Route path='/userprofile' element={<UserProfile/>}/>
         <Route path='/register' element={<Register/>}/>
      
      </Routes>
