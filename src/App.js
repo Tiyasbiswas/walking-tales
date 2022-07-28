@@ -3,7 +3,6 @@ import Header from './components/Header';
 import Activity from './components/Activity';
 import Banner from './components/Banner';
 import Footer from './components/Footer';
-import Map from './components/Map'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
@@ -15,9 +14,7 @@ function App() {
       <br/>
       <Banner/>
      <Activity/>
-      <Footer/>
-    
-      
+      <Footer/>      
     </div>
 
   );

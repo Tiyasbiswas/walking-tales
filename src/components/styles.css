@@ -1,0 +1,26 @@
+.container-activity{
+    background-color: #e5f1ea;
+    display:block;
+    align-items: flex-start;
+    padding: 10px;
+  }
+.routes-activity-map{
+    width: 50%;
+    float: left;  
+}
+.addroutes{ 
+    width: 50%;
+    float: right;  
+}
+
+#dropdown-menu-align-left{
+    background-color: rgb(75, 145, 61);
+}
+#addnew-routes-align-right{
+    background-color: rgb(190, 170, 144);
+}
+.map-details{
+    position:'absolute' ;
+   height:'100%' weight='100%';
+   left:0; top:0;
+}
