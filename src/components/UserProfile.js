@@ -41,7 +41,7 @@ export default function UserProfile(){
               <Dropdown.Item eventKey="Walking">Walking</Dropdown.Item>
               <Dropdown.Item eventKey="Yoga">Yoga</Dropdown.Item>
               <Dropdown.Item eventKey="Swimming">Swimming</Dropdown.Item>
-              <Dropdown.Item eventKey="Hiking">Hiking</Dropdown.Item>\
+              <Dropdown.Item eventKey="Hiking">Hiking</Dropdown.Item>
               <Dropdown.Item eventKey="Cycling">Cycling</Dropdown.Item>
 
 
