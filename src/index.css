@@ -28,7 +28,7 @@ code {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background-color: #e5f1ea;
+  background: linear-gradient(45deg,#ffff,#c3d7d8);
 }
 .timercheck{
   font-family: "Roboto";
