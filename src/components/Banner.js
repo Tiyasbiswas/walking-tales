@@ -18,6 +18,11 @@ return(
        }
         } />
         {/* </div> */}
+
+        {/* <div class = "container">
+  <h1>Make stories while</h1>
+  <h1>Exercising</h1>
+</div> */}
   </div>
   </div>
   </div>
