@@ -4,11 +4,8 @@ export default function footer() {
     return (
         <>
         <br />
-            <div className="footer" >
+            <div className="footer text-center" >
                 <div className="row">
-                    <div className="img-fluid ">
-                        {/* <img src="./images/footImage.png" alt="map image" /> */}
-                    </div>
                     <div className="col-md-15 pt-2 mt-3 pb-2 mb-3">
                             <a href="#!">Home</a>
                             <a href="#!">About </a>
