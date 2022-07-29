@@ -80,7 +80,7 @@ export default function Header() {
 
     <Form onSubmit={(e) => handleSubmit(e)}>
       <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Control name="email" onChange={(e) =>
+        <Form.Control name="email" required onChange={(e) =>
               setValues({ ...values, [e.target.name]: e.target.value })
             } type="email" placeholder="Enter email" />
         
@@ -88,7 +88,7 @@ export default function Header() {
 
       <Form.Group className="mb-3" controlId="formBasicPassword">
        
-        <Form.Control name="password"  onChange={(e) =>
+        <Form.Control name="password" required onChange={(e) =>
               setValues({ ...values, [e.target.name]: e.target.value })
             } type="password" placeholder="Password" />
       </Form.Group>

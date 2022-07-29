@@ -22,7 +22,7 @@ function Register() {
     }
   }, [cookies, navigate]);
 
-  const [values, setValues] = useState({ email: "", password: "" });
+  const [values, setValues] = useState({ First_name: "", Last_name: "", user_name: "", email: "", password: "", city: "" });
   const generateError = (error) =>
     toast.error(error, {
       position: "bottom-right",
@@ -63,9 +63,9 @@ function Register() {
         <Header />
         <div className="container rounded shadow">
           <br/>
-          <h2 style={{ color: "#073648" }}>Please provide us with the follwoing details to become a member.</h2>
+          <h2 style={{ color: "#073648" }}>Please provide us with the following details to become a member.</h2>
           <br/>
-    <Form noValidate validated={validated} onSubmit={(e) => handleSubmit(e)}>
+    <Form onSubmit={(e) => handleSubmit(e)}>
       <Row className="mb-3">
         <Form.Group as={Col} md="5" controlId="validationCustom01">
           <Form.Label>First name</Form.Label>
@@ -120,7 +120,7 @@ function Register() {
         <Form.Group as={Col} md="6" controlId="validationCustom03">
         <br/>
           <Form.Label>Email</Form.Label>
-          <Form.Control type="text" placeholder="email" name="email" required onChange={(e) =>
+          <Form.Control type="email" placeholder="email" name="email" required onChange={(e) =>
               setValues({ ...values, [e.target.name]: e.target.value })
             } />
           <Form.Control.Feedback type="invalid">
@@ -142,7 +142,7 @@ function Register() {
         <Form.Group as={Col} md="6" controlId="validationCustom03">
         <br/>
           <Form.Label>City</Form.Label>
-          <Form.Control type="text" placeholder="City" name="City" required onChange={(e) =>
+          <Form.Control type="text" placeholder="City" name="city" required onChange={(e) =>
               setValues({ ...values, [e.target.name]: e.target.value })
             } />
           <Form.Control.Feedback type="invalid">
