@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter,Route, Routes } from 'react-router-dom';
 import Register from './components/Register';
 import UserProfile from './components/UserProfile';
+import FindPartner from './components/FindPartner';
 import "react-toastify/dist/ReactToastify.css";
 import Blog from './components/Blog';
 
@@ -15,11 +16,12 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
      <Routes>
-     <Route path='/' element={<App/>}/>
+        <Route path='/' element={<App/>}/>
         <Route path='/userprofile' element={<UserProfile/>}/>
         <Route path='/register' element={<Register/>}/>
         <Route path='/blog' element={<Blog/>}/>
      
+        <Route path='/findpartner' element={<FindPartner/>}/>       
      </Routes>
      </BrowserRouter>
    
