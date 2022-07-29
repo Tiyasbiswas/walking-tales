@@ -10,16 +10,24 @@ import LocationMarker from './LocationMarker';
 
 export default function UserProfile() {
 
-
   const [setvalue, setSelvalue] = useState('');// option data value
   const [saveroute, setSaveroute] = useState({
     routename:"",
     duration: ""
   }); // seting the routes
 
+  // const [showhide, setShowhide]=useState(false);//showhide 
+  
+  // const handleshowhide=(event)=>{
+  //   const getuserselectedvalue = event.target.value;    
+  //   setShowhide(getuserselectedvalue);
+
+  // }
+
+
   const handleSelect = (e) => {
     console.log(e);
-    setSelvalue(e)
+    setSelvalue(e);
   };
   console.log(" value set" + setvalue)
 
@@ -37,12 +45,12 @@ export default function UserProfile() {
   return (
     <>
       <Header />
-      <div className='full-container rounded shadow'>
-      <div className='findworkdistory'>
+      <div className='container rounded shadow'>
+      {/* <div className='findworkdistory'>
       <Button type="button">
             Show History
       </Button>
-      </div>
+      </div> */}
       <div className='container-class-user-profile'>
         <div className='row'>
           <div className='col-sm-6'>
