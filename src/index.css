@@ -28,34 +28,23 @@ code {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  /* background-color: #e5f1ea; */
-  background: linear-gradient(45deg,#ffff,#c3d7d8);
+  background-color: #e5f1ea;
 }
 .timercheck{
   font-family: "Roboto";
 }
-
-a:link {
-  color: #073648;
-  background-color: transparent;
-  text-decoration: none;
-  padding: 10px;
-}
-
-a:visited {
-  color: #073648;
-  background-color: transparent;
-  text-decoration: none;
-}
-
-.footer{
-  /* background-image: url("/public/images/footImage.png");
-  max-height: 130vh;
-  background-size: contain; */
+.blog-block{
+  height:200px;
+  width:350px; 
+  padding-top: 20px;
   
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
 }
+.cardcontainer{
+  background-color:white;
+  padding-bottom: 15px;
+  margin-bottom: 40px;
+  margin-left: 20px;
+  margin-right: 40px;
+}
+
 
