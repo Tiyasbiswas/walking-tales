@@ -28,10 +28,34 @@ code {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background-color: #e5f1ea;
+  /* background-color: #e5f1ea; */
+  background: linear-gradient(45deg,#ffff,#c3d7d8);
 }
 .timercheck{
   font-family: "Roboto";
 }
 
+a:link {
+  color: white;
+  background-color: transparent;
+  text-decoration: none;
+  padding: 10px;
+}
+
+a:visited {
+  color: white;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+.footer{
+  /* background-image: url("/public/images/footImage.png");
+  max-height: 130vh;
+  background-size: contain; */
+  background-color: #073648;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
 
