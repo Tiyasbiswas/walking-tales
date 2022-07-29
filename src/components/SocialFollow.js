@@ -10,10 +10,10 @@ import {
 export default function SocialFollow() {
   return (
     <div className="social-container">
-      <h6> ❤️ Walking Tales</h6>
+      {/* <h6> ❤️ Walking Tales</h6> */}
       <a
         href="https://www.youtube.com/"
-        className="youtube social color-"
+        className="youtube social"
       >
         <FontAwesomeIcon icon={faYoutube} size="2x" />
       </a>
