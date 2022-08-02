@@ -9,6 +9,7 @@ import UserProfile from './components/UserProfile';
 import FindPartner from './components/FindPartner';
 import "react-toastify/dist/ReactToastify.css";
 import Blog from './components/Blog';
+import WorkoutHistory from './components/WorkoutHistory';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -20,8 +21,8 @@ root.render(
         <Route path='/userprofile' element={<UserProfile/>}/>
         <Route path='/register' element={<Register/>}/>
         <Route path='/blog' element={<Blog/>}/>
-     
-        <Route path='/findpartner' element={<FindPartner/>}/>       
+        <Route path='/findpartner' element={<FindPartner/>}/>  
+        <Route path='/workouthistory' element={<WorkoutHistory/>}/>     
      </Routes>
      </BrowserRouter>
    

@@ -62,7 +62,7 @@ export default function Header() {
             <Nav className="me-auto my-2 my-lg-0 justify-content-end" style={{ maxHeight: '100px', gap: '40px'}} navbarScroll>
               <Nav.Link href="/">Home</Nav.Link>
               <Nav.Link href="#action2">About</Nav.Link>
-              <Nav.Link href="#">Blog</Nav.Link>
+              <Nav.Link href="/blog">Blog</Nav.Link>
               <Nav.Link href="#">Contact</Nav.Link>
             </Nav>
             <Button className="login-button" style={{ color: "white", background: "#073648" }}  onClick={handleShow}>Login</Button>
