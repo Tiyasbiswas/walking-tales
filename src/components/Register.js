@@ -7,6 +7,7 @@ import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Row from 'react-bootstrap/Row';
 import axios from "axios";
+import { addUserToLocalStorage } from "../utils/localStorage";
 import { ToastContainer, toast } from "react-toastify";
 import { useCookies } from "react-cookie";
 import { Link, useNavigate } from "react-router-dom";
@@ -43,6 +44,7 @@ function Register() {
           ...values,
         },
         { withCredentials: true }
+
       );
       if (data) {
         if (data.errors) {
@@ -50,6 +52,8 @@ function Register() {
           if (email) generateError(email);
           else if (password) generateError(password);
         } else {
+          console.log(`Hi There! ${data.username}`)
+          addUserToLocalStorage(data);
           navigate("/");
         }
       }
