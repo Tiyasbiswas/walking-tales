@@ -1,8 +1,6 @@
 import { MapContainer, TileLayer } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import React, {useEffect, useState} from "react";
-import LocationMarker from './LocationMarker'
-
 import RoutingMachine from "./RoutingMachine";
 
 export default function Map() {
