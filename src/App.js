@@ -8,6 +8,8 @@ import Blog from './components/Blog';
 import Chat from './components/Chat';
 import Home from './Home';
 import { UserContext } from './context/UserContext';
+import Contact from './components/Contact';
+
 
 
 function App() { 
@@ -22,7 +24,8 @@ function App() {
         <Route path='/register' element={<Register/>}/>
         <Route path='/blog' element={<Blog/>}/>
         <Route path='/chat' element={<Chat/>}/>
-        <Route path='/findpartner' element={<FindPartner/>}/>       
+        <Route path='/findpartner' element={<FindPartner/>}/>   
+        <Route path='/contact' element={<Contact/>}/>    
      </Routes>
      
      </BrowserRouter>
