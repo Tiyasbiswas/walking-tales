@@ -1,15 +1,18 @@
 import Header from './Header';
 import Footer from './Footer';
-import React, { useState,useEffect} from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import Button from 'react-bootstrap/Button';
 import './styles.css';
 import Capturetime from './Capturetime';
 import LocationMarker from './LocationMarker';
+
+import { UserContext } from "../context/UserContext";
 import { Link, useNavigate } from "react-router-dom";
 
 export default function UserProfile() {
+  const { user, setUser } = useContext(UserContext)
 
   const [latitude,setLatitude]=useState(0);
   const [longitude,setLongitude]=useState(0);
@@ -62,6 +65,7 @@ export default function UserProfile() {
 
 
         <div className='container-class-user-profile'>
+
           <div className='row'>
             <div className='col-sm-6'>
               <div className="activity" style={{ paddingLeft: "80px", paddingRight: "90px" }} >
@@ -83,7 +87,7 @@ export default function UserProfile() {
             </div>
           </div>
 
-
+          <h3>Welcome,{user.username}</h3>
           <div className='map-details'>
             <LocationMarker />
           </div>

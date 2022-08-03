@@ -1,18 +1,26 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
 import Form from 'react-bootstrap/Form';
-import {Link, Route, Routes, useNavigate} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 import { Container, Button } from 'react-bootstrap'
 import { useCookies } from "react-cookie";
 import { ToastContainer, toast } from "react-toastify";
 import axios from 'axios'
+import {UserContext} from "../context/UserContext";
+
 
 export default function Header() {
+  const {user, setUser} = useContext(UserContext)
+  console.log("hello", user)
   const [show, setShow] = useState(false);
   const [cookies] = useCookies([]);
+  //const [user, setUser] = useState(null);
   const navigate = useNavigate();
+  // const { setUser } = useContext(UserContext);
+  const [error, setError] = useState(null);
+
   useEffect(() => {
     if (cookies.jwt) {
       navigate("/");
@@ -40,6 +48,9 @@ export default function Header() {
           if (email) generateError(email);
           else if (password) generateError(password);
         } else {
+        
+           setUser(data.user)
+          
           navigate("/userprofile");
         }
       }
@@ -48,9 +59,17 @@ export default function Header() {
     }
   };
 
+  useEffect(() => user?.username && setShow(false), [user])
+  
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  const handleLogout = async (e) => {
+    // e.preventDefault();
+    // if(!user === "null")
+    // setUser(null)
+    // navigate("/")
+  }
   
     return (
         <section>
@@ -65,7 +84,8 @@ export default function Header() {
               <Nav.Link href="/blog">Blog</Nav.Link>
               <Nav.Link href="#">Contact</Nav.Link>
             </Nav>
-            <Button className="login-button" style={{ color: "white", background: "#073648" }}  onClick={handleShow}>Login</Button>
+            {user ? <Button className="login-button" style={{ color: "white", background: "#073648" }}  onClick={handleLogout}>Logout</Button> : <Button className="login-button" style={{ color: "white", background: "#073648" }}  onClick={handleShow}>Login</Button>}
+            
             </Navbar.Collapse>
   </Container>
 </Navbar>

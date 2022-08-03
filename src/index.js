@@ -1,31 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter,Route, Routes } from 'react-router-dom';
-import Register from './components/Register';
-import UserProfile from './components/UserProfile';
-import FindPartner from './components/FindPartner';
-import "react-toastify/dist/ReactToastify.css";
-import Blog from './components/Blog';
-import WorkoutHistory from './components/WorkoutHistory';
-
+import App from './App'
+import { UserContextProvider } from './context/UserContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-     <Routes>
-        <Route path='/' element={<App/>}/>
-        <Route path='/userprofile' element={<UserProfile/>}/>
-        <Route path='/register' element={<Register/>}/>
-        <Route path='/blog' element={<Blog/>}/>
-        <Route path='/findpartner' element={<FindPartner/>}/>  
-        <Route path='/workouthistory' element={<WorkoutHistory/>}/>     
-     </Routes>
-     </BrowserRouter>
-   
+    <UserContextProvider >
+   <App />
+   </UserContextProvider>
   </React.StrictMode>
 );
 
