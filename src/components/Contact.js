@@ -58,7 +58,7 @@ const Contact = () => {
                   <h3 className="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Contact Us</h3>
                   <h4> Share your Journey at walkingtales.com</h4>
 
-                  <form id="contactform" className="px-md-2" onSubmit={sendMail}>
+                  <form id="contactform" className="px-md-2 contactform" onSubmit={sendMail}>
 
                     <div className="form-outline mb-4">
                       <label className="form-label" >Name</label>
