@@ -1,6 +1,6 @@
 import Header from './Header';
 import Footer from './Footer';
-import React, { useState,useEffect } from 'react';
+import React, { useState,useEffect} from 'react';
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import Button from 'react-bootstrap/Button';
@@ -8,8 +8,6 @@ import './styles.css';
 import Capturetime from './Capturetime';
 import LocationMarker from './LocationMarker';
 import { Link, useNavigate } from "react-router-dom";
-
-
 
 export default function UserProfile() {
 
@@ -31,8 +29,6 @@ export default function UserProfile() {
 
  const currentLoc  =  [latitude,longitude];
   //------------------------------------------------------------------
-
-
   const handleSelect = (e) => {
     setSelvalue(e);
   };
@@ -46,8 +42,8 @@ export default function UserProfile() {
   //------------------------------------------------------------------
   const addnewroutes = (event) => {
     setSaveroute((prev) => ({ ...prev, [event.target.name]: destination}));
-    console.log("saveroute: ", saveroute);
-    navigate("/findpartner");
+    console.log("saveroute: ", destination);
+    navigate("/findpartner", { state: { startpoint: currentLoc, destinationpoint: destination } });
   };
 //setValues({ ...values, [e.target.name]: e.target.value })
 
@@ -110,9 +106,9 @@ export default function UserProfile() {
                 {showRouteWindow && (
                   <div className='map-box  shadow rounded'>
                     <input type="text" name="start" value={currentLoc} autoComplete="off" />
-                    <input type="text" name="destination" value={destination} autoComplete="on" onChange={(e) => setDestination(e.target.value)} />
+                    <input type="text"   name="destination" value={destination} autoComplete="on" onChange={(e) => setDestination(e.target.value)}  />
                     <br/>
-                    <Button style={{ background: "#94B49F"}} type="save" onClick={addnewroutes}>Save</Button>
+                    <Button style={{ background: "#94B49F"}} type="save" onClick={addnewroutes} >Save</Button>
                   </div>
                 )}
               </div>
