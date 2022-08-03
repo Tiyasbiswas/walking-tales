@@ -24,8 +24,8 @@ function App() {
         <Route path='/register' element={<Register/>}/>
         <Route path='/blog' element={<Blog/>}/>
         <Route path='/chat' element={<Chat/>}/>
-        <Route path='/findpartner' element={<FindPartner/>}/>   
-        <Route path='/contact' element={<Contact/>}/>    
+        <Route path='/findpartner' element={<FindPartner/>}/>
+        <Route path='/contact' element={<Contact/>}/>       
      </Routes>
      
      </BrowserRouter>
