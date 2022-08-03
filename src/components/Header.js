@@ -8,30 +8,18 @@ import { Container, Button } from 'react-bootstrap'
 import { useCookies } from "react-cookie";
 import { ToastContainer, toast } from "react-toastify";
 import axios from 'axios'
-import { addUserToLocalStorage } from "../utils/localStorage";
 import {UserContext} from "../context/UserContext";
-
 
 
 export default function Header() {
   const {user, setUser} = useContext(UserContext)
-  console.log("hello" + user)
+  console.log("hello", user)
   const [show, setShow] = useState(false);
   const [cookies] = useCookies([]);
   //const [user, setUser] = useState(null);
   const navigate = useNavigate();
   // const { setUser } = useContext(UserContext);
   const [error, setError] = useState(null);
-
-  //set user
-//   const setUserContext = async () => {
-//     return await axios.get('/http://localhost:9000/auth/user').then(res => {         
-//         setUser(res.data.currentUser);  
-//         navigate('/userprofile');                     
-//         }).catch((err) => {
-//         setError(err.response.data);
-//     })
-// }
 
   useEffect(() => {
     if (cookies.jwt) {
@@ -60,23 +48,28 @@ export default function Header() {
           if (email) generateError(email);
           else if (password) generateError(password);
         } else {
-        //  setUserContext()
-          addUserToLocalStorage(data);
-          // console.log(setUser)
+        
            setUser(data.user)
-          // console.log(`Hi There! ${data.user.username}`)
-          // console.log(user)
-          navigate("/");
+          
+          navigate("/userprofile");
         }
       }
     } catch (ex) {
       console.log(ex);
     }
   };
-   useEffect(()=>console.log(user), [user])
+
+  useEffect(() => user?.username && setShow(false), [user])
+  
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  const handleLogout = async (e) => {
+    // e.preventDefault();
+    // if(!user === "null")
+    // setUser(null)
+    // navigate("/")
+  }
   
     return (
         <section>
@@ -91,8 +84,8 @@ export default function Header() {
               <Nav.Link href="#">Blog</Nav.Link>
               <Nav.Link href="#">Contact</Nav.Link>
             </Nav>
-            {user ? <h1>welcome {user.username} </h1> : <h1>user loading..</h1>}
-            <Button className="login-button" style={{ color: "white", background: "#073648" }}  onClick={handleShow}>Login</Button>
+            {user ? <Button className="login-button" style={{ color: "white", background: "#073648" }}  onClick={handleLogout}>Logout</Button> : <Button className="login-button" style={{ color: "white", background: "#073648" }}  onClick={handleShow}>Login</Button>}
+            
             </Navbar.Collapse>
   </Container>
 </Navbar>

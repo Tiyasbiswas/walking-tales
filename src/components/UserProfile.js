@@ -1,14 +1,16 @@
 import Header from './Header';
 import Footer from './Footer';
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import Button from 'react-bootstrap/Button';
 import './styles.css';
 import Capturetime from './Capturetime';
 import LocationMarker from './LocationMarker';
+import { UserContext } from "../context/UserContext";
 
 export default function UserProfile() {
+  const { user, setUser } = useContext(UserContext)
 
   const [setvalue, setSelvalue] = useState('');// option data value
   const [saveroute, setSaveroute] = useState({
@@ -73,7 +75,7 @@ export default function UserProfile() {
           </div>
         </div>
 
-
+        <h3>Welcome,{user.username}</h3>
         <div className='map-details'>
           <LocationMarker />
         </div>

@@ -8,16 +8,10 @@ import Blog from './components/Blog';
 import Chat from './components/Chat';
 import Home from './Home';
 import { UserContext } from './context/UserContext';
-import useFindUser from './context/useFindUser';
+
 
 function App() { 
-  const { 
-    user, 
-    setUser, 
-    isLoading } = useFindUser();
-    {
-      !localStorage.getItem('token') ? <Link to='/' /> : <Link to='userprofile'/>
-   }  
+  
   return (
     <>
     <BrowserRouter>

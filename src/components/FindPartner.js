@@ -1,9 +1,12 @@
+import React, {useContext} from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import Map from './Map';
 import {Link} from 'react-router-dom'
+import { UserContext } from "../context/UserContext";
 
 export default function FindPartner() {
+    const { user, setUser } = useContext(UserContext)
     !localStorage.getItem('token') ? <Link to='/' /> : <Link to='userprofile'/>
     return(
     <>

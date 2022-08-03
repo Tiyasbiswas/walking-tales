@@ -1,30 +1,42 @@
 import { createContext, useState, useEffect } from "react";
+import axios from "axios";
 
 export const UserContext = createContext();
-const UserContextProvider = ({ children }) => {
-  
-  const [user, setUser] = useState(
-    JSON.parse(localStorage.getItem("user")) || { value: null }
-  );
-  const [count, setCount] = useState(
-    JSON.parse(localStorage.getItem("count")) || { value: 0 }
-  );
+
+export const UserContextProvider = ({ children }) => {
+
+  const [user, setUser] = useState();
+  const [isLoading, setLoading] = useState(true);
+
+  const register = async () => { }
+  const login = async () => { }
+  const logout = async () => { }
 
   useEffect(() => {
-    localStorage.setItem("count", JSON.stringify(count));
-  }, [count]);
+    async function findUser() {
+      await axios.get('http://localhost:9000/auth/user')
+        .then(res => {
+          setUser(res.data.currentUser);
+          setLoading(false);
+        }).catch(err => {
+          //console.log(err);
+          setLoading(false);
+        });
+    }
 
-  useEffect(() => {
-    localStorage.setItem("user", JSON.stringify(user));
-  }, [user]);
+    findUser();
+  }, []);
 
   return (
     <UserContext.Provider
       value={{
-        user, 
+        user,
         setUser,
-        count,
-        setCount,
+        isLoading,
+        setLoading,
+        register,
+        logout,
+        login
       }}
     >
       {children}
