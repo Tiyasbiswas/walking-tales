@@ -54,9 +54,9 @@ function Register() {
           if (email) generateError(email);
           else if (password) generateError(password);
         } else {
-          console.log(`Hi There! ${data.username}`)
-          addUserToLocalStorage(data);
-          navigate("/");
+          // console.log(`Hi There! ${data.username}`)
+          // addUserToLocalStorage(data);
+           navigate("/userprofile");
         }
       }
     } catch (ex) {
@@ -136,7 +136,7 @@ function Register() {
         <Form.Group as={Col} md="4" controlId="validationCustom04">
         <br/>
           <Form.Label>Password</Form.Label>
-          <Form.Control type="password" name="password"placeholder="password" required onChange={(e) =>
+          <Form.Control type="password" name="password" placeholder="password" required onChange={(e) =>
               setValues({ ...values, [e.target.name]: e.target.value })
             }/>
           <Form.Control.Feedback type="invalid">
