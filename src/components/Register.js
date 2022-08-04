@@ -24,6 +24,8 @@ function Register() {
   }, [cookies, navigate]);
 
   const [values, setValues] = useState({ First_name: "", Last_name: "", user_name: "", email: "", password: "", city: "" });
+  useEffect(() => console.log(values), [values])
+
   const generateError = (error) =>
     toast.error(error, {
       position: "bottom-right",
@@ -134,7 +136,7 @@ function Register() {
         <Form.Group as={Col} md="4" controlId="validationCustom04">
         <br/>
           <Form.Label>Password</Form.Label>
-          <Form.Control type="password" placeholder="password" required onChange={(e) =>
+          <Form.Control type="password" name="password"placeholder="password" required onChange={(e) =>
               setValues({ ...values, [e.target.name]: e.target.value })
             }/>
           <Form.Control.Feedback type="invalid">
