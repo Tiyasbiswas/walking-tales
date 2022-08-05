@@ -7,9 +7,13 @@ import Button from 'react-bootstrap/Button';
 import './styles.css';
 import Capturetime from './Capturetime';
 import LocationMarker from './LocationMarker';
-
 import { UserContext } from "../context/UserContext";
 import { Link, useNavigate } from "react-router-dom";
+
+
+
+
+
 
 export default function UserProfile() {
   const { user, setUser } = useContext(UserContext)
@@ -38,9 +42,9 @@ export default function UserProfile() {
   console.log(" value set" + setvalue);
 
 //------------------------------------------------------------------
-  const handleSelectedRoutes = (event) => {
-    setSaveroute(event.target.value);
-  };
+  // const handleSelectedRoutes = (event) => {
+  //   setSaveroute(event.target.value);
+  // };
 
   //------------------------------------------------------------------
   const addnewroutes = (event) => {
@@ -87,20 +91,20 @@ export default function UserProfile() {
             </div>
           </div>
 
-          <h3>Welcome,{user.username}</h3>
+          {/* <h3>Welcome,{user.username}</h3> */}
           <div className='map-details'>
             <LocationMarker />
           </div>
 
           <div className='routes-activity-map'>
             <div className='row'>
-              <div className='col-sm-6'>
+              {/* <div className='col-sm-6'>
                 <DropdownButton title="Saved Routes" id="dropdown-menu-align-left" onSelect={handleSelectedRoutes} >
                   <Dropdown.Item eventKey="Necker" >Necker</Dropdown.Item>
                   <Dropdown.Item eventKey="WaltBierGarten">WaltBierGarten</Dropdown.Item>
                   <Dropdown.Item eventKey="Osterburg">Osterburg</Dropdown.Item>
                 </DropdownButton>
-              </div>
+              </div> */}
               <div className='col-sm-6'>
                 <Button type="button" id="addnew-routes-align-right" onClick={() => setShowWindow(true)} >
                   {/* <Button type="button" id="addnew-routes-align-right" onClick={addnewroutes} > */}
@@ -112,9 +116,14 @@ export default function UserProfile() {
                     <input type="text" name="start" value={currentLoc} autoComplete="off" />
                     <input type="text"   name="destination" value={destination} autoComplete="on" onChange={(e) => setDestination(e.target.value)}  />
                     <br/>
-                    <Button style={{ background: "#94B49F"}} type="save" onClick={addnewroutes} >Save</Button>
+                    <Button style={{ background: "#94B49F"}} type="save" >Save</Button>
                   </div>
                 )}
+              </div>
+              <div className='col-sm-6'> 
+                <Button type="button" id="find-your-mate" onClick={addnewroutes}  >
+                  Find Mate
+                </Button>
               </div>
             </div>
           </div>
