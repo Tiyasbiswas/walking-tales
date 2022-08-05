@@ -82,7 +82,7 @@ export default function Header() {
               <Nav.Link href="/">Home</Nav.Link>
               <Nav.Link href="#action2">About</Nav.Link>
               <Nav.Link href="/blog">Blog</Nav.Link>
-              <Nav.Link href="#">Contact</Nav.Link>
+              <Nav.Link href="/contact">Contact</Nav.Link>
             </Nav>
             {user ? <Button className="login-button" style={{ color: "white", background: "#073648" }}  onClick={handleLogout}>Logout</Button> : <Button className="login-button" style={{ color: "white", background: "#073648" }}  onClick={handleShow}>Login</Button>}
             
