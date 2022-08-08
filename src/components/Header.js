@@ -68,7 +68,8 @@ export default function Header() {
     // e.preventDefault();
     // if(!user === "null")
     // setUser(null)
-    // navigate("/")
+    localStorage.removeItem("user");
+     navigate("/");
   }
   
     return (
@@ -80,7 +81,7 @@ export default function Header() {
             <Navbar.Collapse id="navbarScroll">
             <Nav className="me-auto my-2 my-lg-0 justify-content-end" style={{ maxHeight: '100px', gap: '40px'}} navbarScroll>
               <Nav.Link href="/">Home</Nav.Link>
-              <Nav.Link href="#action2">About</Nav.Link>
+              <Nav.Link href="/about">About</Nav.Link>
               <Nav.Link href="/blog">Blog</Nav.Link>
               <Nav.Link href="/contact">Contact</Nav.Link>
             </Nav>

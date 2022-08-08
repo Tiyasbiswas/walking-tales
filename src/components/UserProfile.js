@@ -11,10 +11,6 @@ import { UserContext } from "../context/UserContext";
 import { Link, useNavigate } from "react-router-dom";
 
 
-
-
-
-
 export default function UserProfile() {
   const { user, setUser } = useContext(UserContext)
 
@@ -61,17 +57,12 @@ export default function UserProfile() {
       <Header />
       <div className='container rounded shadow'>
        
-        <div className='findworkdistory'>
-          <Button type="button">
-            <Link to='/workouthistory'>Show History</Link>
-          </Button>
-        </div>
-
+        
 
         <div className='container-class-user-profile'>
 
           <div className='row'>
-            <div className='col-sm-6'>
+            <div className='col-sm-4'>
               <div className="activity" style={{ paddingLeft: "80px", paddingRight: "90px" }} >
                 <DropdownButton title="Choose Activity" id="menu-select-activity" onSelect={handleSelect} >
                   <Dropdown.Item eventKey="Walking">Walking</Dropdown.Item>
@@ -80,13 +71,19 @@ export default function UserProfile() {
                   <Dropdown.Item eventKey="Hiking">Hiking</Dropdown.Item>
                   <Dropdown.Item eventKey="Cycling">Cycling</Dropdown.Item>
                 </DropdownButton>
-                <br />
-                <h5><i>You have selected :: {setvalue}</i></h5>
+                <br/>
+                {/* <h6>You have selected&nbsp;{setvalue}</h6> */}
               </div>
-            </div>
-            <div className='col-sm-6'>
+            </div><div  className='col-sm-4'>
+            <div className='findworkdistory'>
+            <br/><br/>
+          <Button type="button" variant="info">
+            <Link to='/workouthistory'>Show history</Link>
+          </Button>
+        </div></div>
+            <div className='col-sm-4'>
               <div className='timercounter'>
-                <Capturetime />
+                <Capturetime/>
               </div>
             </div>
           </div>
@@ -95,7 +92,6 @@ export default function UserProfile() {
           <div className='map-details'>
             <LocationMarker />
           </div>
-
           <div className='routes-activity-map'>
             <div className='row'>
               {/* <div className='col-sm-6'>
@@ -106,11 +102,9 @@ export default function UserProfile() {
                 </DropdownButton>
               </div> */}
               <div className='col-sm-6'>
-                <Button type="button" id="addnew-routes-align-right" onClick={() => setShowWindow(true)} >
-                  {/* <Button type="button" id="addnew-routes-align-right" onClick={addnewroutes} > */}
-                  Add new Route
+                <Button type="button" variant = "info" id="addnew-routes-align-right" onClick={() => setShowWindow(true)} >
+                Add new route
                 </Button>
-
                 {showRouteWindow && (
                   <div className='map-box  shadow rounded'>
                     <input type="text" name="start" value={currentLoc} autoComplete="off" />
@@ -120,9 +114,10 @@ export default function UserProfile() {
                   </div>
                 )}
               </div>
-              <div className='col-sm-6'> 
-                <Button type="button" id="find-your-mate" onClick={addnewroutes}  >
-                  Find Mate
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <div className='col-sm-3'> 
+                <Button type="button" variant = "info" id="find-your-mate" onClick={addnewroutes}  >
+                  Find mate
                 </Button>
               </div>
             </div>
