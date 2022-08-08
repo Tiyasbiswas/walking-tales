@@ -49,36 +49,36 @@ const Contact = () => {
       <div className="container py-3">
         <div className="container py-5 h-100" >
           <div className="row d-flex justify-content-center align-items-center h-100">
-            <div className="col-lg-8 col-xl-6">
+            <div className="col-lg-8 col-xl-8">
               <div className="card rounded-3">
-                <img className="w-100" src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/img3.webp"
-                  alt="Sample photo" />
+                <img className="w-100" class="rounded" src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/img3.webp"
+                  alt="Sample photo"/>
 
                 <div className="card-body p-4 p-md-5">
-                  <h3 className="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Contact Us</h3>
-                  <h4> Share your Journey at walkingtales.com</h4>
+                  {/* <h3 className="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Contact us</h3> */}
+                  <h4> Share your journey with us</h4>
 
                   <form id="contactform" className="px-md-2 contactform" onSubmit={sendMail}>
 
                     <div className="form-outline mb-4">
-                      <label className="form-label" >Name</label>
-                      <input type="text" name="sender_name" value={sender_name} onChange={handleName} required placeholder="your name" />
+                      <label className="form-label" >Name&nbsp;</label>
+                      <input type="text" name="sender_name" value={sender_name} onChange={handleName} required placeholder=" your name" />
                     </div>
 
                     <div className="form-outline mb-4">
-                      <label className="form-label" >Email</label>
-                      <input type="text" name="sender_email" value={sender_email} onChange={handleEmail} required placeholder="your email " />
+                      <label className="form-label" >Email&nbsp;&nbsp;</label>
+                      <input type="text" name="sender_email" value={sender_email} onChange={handleEmail} required placeholder=" your email " />
                     </div>
 
 
-                    <div className="col-md-6 mb-4">
-<select className="select">
+                    <div className="col-md-6 mb-4"><label className="form-label" >Gender&nbsp;</label>
+                    <select className="select">
                         <option value="1" disabled>Gender</option>
                         <option value="2">Female</option>
                         <option value="3">Male</option>
-                        <option value="4">Other</option>
+                        <option value="4">Don't wish to specify</option>
                       </select>
-</div>
+                   </div>
 
                     <div className="col-md-9 pe-5">
                       <label className="form-label" >Message</label>
@@ -87,7 +87,7 @@ const Contact = () => {
 
                     <div className="d-flex justify-content-center">
                       <button type="submit"
-                        className="btn btn-success my-4 text-bg-success ">Send us Email</button>
+                        className="btn btn-success my-4 text-bg-success ">Send</button>
                     </div>
 
                   </form>
@@ -103,6 +103,5 @@ const Contact = () => {
 }
 
 export default Contact;
-
 
 

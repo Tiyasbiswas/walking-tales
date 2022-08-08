@@ -11,13 +11,13 @@ const now = moment().hour(0).minute(0);
 export default function Capturetime() {
   const [time, setTime] = React.useState(now);
   const onChange = (value) => {
-    console.log(value && value.format(format));
+    //console.log(value && value.format(format));
     setTime(value);
   };
 
   return (
 <>   <TimePicker
-        styles={{ fontFamily: "Roboto" }}
+        styles={{ fontFamily: "Roboto", }}
         showSecond={false}
         value={time}
         className="timercheck"
@@ -27,11 +27,8 @@ export default function Capturetime() {
         minuteStep={1}
       />
       <br />
-      <br />
-      <i>
-        Selected time (24h format):&nbsp;
+        time[24hrs]:&nbsp;
         {time ? time.format("HH:mm") : "???"}
-      </i>
     </>
   );
 }

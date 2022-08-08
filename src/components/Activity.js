@@ -6,7 +6,7 @@ export default function Acitivity() {
         <br /><br />
       <div className="row justify-content-md-center">
          <div className="col-sm-6 md=auto">        
-          <p style={{ maxWidth: '25rem' }} >  
+          <p style={{ maxWidth: '25rem'}} >  
           “Yoga is not a work-out it is a work-in, and this is the point of spiritual practice to make us teachable to open up our hearts and focus our awareness so that we can know what we already know and be who we already are.”
          </p>   
         </div>
@@ -61,7 +61,7 @@ export default function Acitivity() {
        <div className="col-sm-6 " >
           <p style={{ maxWidth: '25rem' }}> 
           <br/> 
-          “Life is like riding a bicycle. In order to keep your balance, you must keep moving.” — Albert Einstein, genius         </p>   
+          “Life is like riding a bicycle. In order to keep your balance, you must keep moving.” — Albert Einstein        </p>   
         </div>
       </div>
       <br /><br />

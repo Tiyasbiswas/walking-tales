@@ -7,7 +7,7 @@ import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Row from 'react-bootstrap/Row';
 import axios from "axios";
-import { addUserToLocalStorage } from "../utils/localStorage";
+// import { addUserToLocalStorage } from "../utils/localStorage";
 import { ToastContainer, toast } from "react-toastify";
 import { useCookies } from "react-cookie";
 import { Link, useNavigate } from "react-router-dom";
@@ -69,7 +69,7 @@ function Register() {
         <Header />
         <div className="container rounded shadow">
           <br/>
-          <h2 style={{ color: "#073648" }}>Please provide us with the following details to become a member.</h2>
+          {/* <h2 style={{ color: "#073648" }}>Please provide us with the following details to become a member.</h2> */}
           <br/>
     <Form onSubmit={(e) => handleSubmit(e)}>
       <Row className="mb-3">
