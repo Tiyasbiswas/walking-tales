@@ -11,7 +11,7 @@ L.Marker.prototype.options.icon = L.icon({
 
 export default function Routing() {
   const location = useLocation();
-  console.log(location.state) // geting the start point  destination point
+  console.log(location.state) 
 
   const usingSplitdestinationpoint = location.state.destinationpoint.split(',');
 

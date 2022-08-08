@@ -29,8 +29,8 @@ code {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background-color: white;
-   /* background: linear-gradient(35deg,#ffff,#c3d7d8);  */
+  /* background-color: rgb(221, 214, 214); */
+   background: linear-gradient(35deg,#ffff,#d9dddd); 
   border-radius: 10px;
 
 }

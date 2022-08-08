@@ -3,7 +3,6 @@ import Header from './Header';
 import Footer from './Footer';
 import { useState } from "react";
 import { send } from 'emailjs-com';
-import FeedBack from 'react-feedback-popup';
 
 export default function FeedBackdata() {
 

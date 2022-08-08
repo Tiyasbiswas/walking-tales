@@ -121,9 +121,6 @@ export default function Header() {
  <br />
  <p>Not a member? <Link to='/register'>Register!</Link></p>
         </Modal.Body>
-        
-          
-        
       </Modal>
       <ToastContainer />
 </section>

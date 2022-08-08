@@ -69,7 +69,6 @@ function Register() {
         <Header />
         <div className="container rounded shadow">
           <br/>
-          {/* <h2 style={{ color: "#073648" }}>Please provide us with the following details to become a member.</h2> */}
           <br/>
     <Form onSubmit={(e) => handleSubmit(e)}>
       <Row className="mb-3">

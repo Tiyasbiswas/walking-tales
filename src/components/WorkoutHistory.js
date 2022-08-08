@@ -38,7 +38,6 @@ import Button from 'react-bootstrap/Button';
   { act: "cycling", cal: 220,time:70 }]
 
 
-
 return(
 <>
 <div><Header/></div>

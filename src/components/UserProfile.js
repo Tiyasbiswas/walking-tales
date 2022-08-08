@@ -72,7 +72,6 @@ export default function UserProfile() {
                   <Dropdown.Item eventKey="Cycling">Cycling</Dropdown.Item>
                 </DropdownButton>
                 <br/>
-                {/* <h6>You have selected&nbsp;{setvalue}</h6> */}
               </div>
             </div><div  className='col-sm-4'>
             <div className='findworkdistory'>

@@ -14,7 +14,7 @@ export default function About() {
     </div>
     <div className='col-md-4'>
         <p> WalkingTales might seem like a Story but its started from introvert weightt loss journey. 
-            You might even wonder what is there in this about page.</p>
+            You might even wonder what is there in this about page. </p>
 <p>
             WalkingTales began on the campus of the Bootcamp of Berlin by the hand of the Bootcamps's instructor, Chrishtopher Selley. 
 

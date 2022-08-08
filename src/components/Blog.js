@@ -15,7 +15,7 @@ export default function Blog() {
 
                         <div className="col-md-7 px-3 ">
                             <div className="card-block px-6">
-                                <h4 className="card-title">What Are the Benefits of Walking?  </h4>
+                                <h4 className="card-title">What Are the Benefits of Walking? </h4>
                                 <p className="card-text mt-4">
                                     Walking can offer numerous health benefits to people of all ages and fitness levels. It may also help prevent certain diseases and even prolong your life.
 

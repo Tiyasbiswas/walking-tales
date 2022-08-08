@@ -18,7 +18,7 @@ export default function footer() {
             </div>
 
             <div className="footer-copyright text-center py-3">© 2022 Copyright:
-                <a style={{ color:"black" }} href="https://walking-tales.com/"> walking-tales.com</a>
+                <a style={{ color:"black" }} href="https://walking-tales.com/"> Walking-tales.com</a>
             </div>
 
 

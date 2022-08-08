@@ -102,7 +102,6 @@ return (
         </FormControl>
 
         <Button
-            // Need type='submit' here for formik
                 type='submit'
                 bg={'blue.400'}
                 color={'white'}
@@ -112,7 +111,6 @@ return (
                 Create Workout
         </Button>
                 </form>
-                    {/* )} */}
             </Stack>
         </Box>
     </Stack>

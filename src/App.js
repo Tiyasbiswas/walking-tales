@@ -13,8 +13,6 @@ import Feedbackdata from './components/Feedbackdata';
 import About from './components/About';
 
 
-
-
 function App() { 
   
   return (

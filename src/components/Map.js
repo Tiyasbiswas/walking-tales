@@ -3,7 +3,6 @@ import "leaflet/dist/leaflet.css";
 import React, {useEffect, useState} from "react";
 import RoutingMachine from "./RoutingMachine";
 
-
 export default function Map() {
   
   const [latitude,setLatitude]=useState(0);
