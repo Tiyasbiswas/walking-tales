@@ -65,10 +65,9 @@ export default function Header() {
   const handleShow = () => setShow(true);
 
   const handleLogout = async (e) => {
-    // e.preventDefault();
-    // if(!user === "null")
-    // setUser(null)
-    localStorage.removeItem("user");
+     e.preventDefault();
+     if(user !== "null")
+     setUser(null)
      navigate("/");
   }
   
