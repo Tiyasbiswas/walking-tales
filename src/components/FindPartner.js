@@ -26,7 +26,7 @@ export default function FindPartner() {
   ]);
   useEffect(() => {
     async function findUsers() {
-      await axios.get(process.env.REACT_APP_SERVER +"/users")
+      await axios.get(process.env.REACT_APP_SERVER +"users")
       .then((res) => res.json())
       .then((data) => {
         setUsers(data)})

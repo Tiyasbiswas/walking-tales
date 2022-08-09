@@ -14,7 +14,7 @@ export const UserContextProvider = ({ children }) => {
 
   useEffect(() => {
     async function findUser() {
-      await axios.get(process.env.REACT_APP_SERVER+'/auth/users')
+      await axios.get(process.env.REACT_APP_SERVER+'auth/users')
         .then(res => {
           setUser(res.data.currentUser);
           setLoading(false);

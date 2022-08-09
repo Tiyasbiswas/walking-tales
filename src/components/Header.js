@@ -36,7 +36,7 @@ export default function Header() {
     event.preventDefault();
     try {
       const { data } = await axios.post(
-        process.env.REACT_APP_SERVER+'/auth/login',
+        process.env.REACT_APP_SERVER+'auth/login',
         {
           ...values,
         },
