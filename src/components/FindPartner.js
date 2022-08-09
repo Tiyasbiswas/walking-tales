@@ -17,13 +17,7 @@ export default function FindPartner() {
 
   const [checked, setChecked] = useState(true);
 
-  const [users, setUsers] = useState([
-    // { id: 1, firstName: 'Frank', lastName: 'Murphy', email: 'frank.murphy@test.com', role: 'User' },
-    // { id: 2, firstName: 'Vic', lastName: 'Reynolds', email: 'vic.reynolds@test.com', role: 'Admin' },
-    // { id: 3, firstName: 'Gina', lastName: 'Jabowski', email: 'gina.jabowski@test.com', role: 'Admin' },
-    // { id: 4, firstName: 'Jessi', lastName: 'Glaser', email: 'jessi.glaser@test.com', role: 'User' },
-    // { id: 5, firstName: 'Jay', lastName: 'Bilzerian', email: 'jay.bilzerian@test.com', role: 'User' }
-  ]);
+  const [users, setUsers] = useState([ ]);
   useEffect(() => {
     async function findUsers() {
       console.log(process.env.REACT_APP_SERVER +"/users");
@@ -46,17 +40,16 @@ export default function FindPartner() {
           <Map />
         </div>
         <div className='container-child'>
-          console.log("----------" ,users);
-          {users && users.map(user =>
+          {users.data && users.data.map(alluser =>
             <ul style={{ listStyle: 'none' }}>
               <li className='userList'>
 
-                <div className='col-md-6'>{user.firstName} {user.lastName}  </div>
+                <div className='col-md-6'>{alluser.First_name} {alluser.Last_name}  </div>
                 <div className='col-md-6'>
                   <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-person-plus-fill" viewBox="0 0 16 16">
                     <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
                     <path fill-rule="evenodd" d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z" />
-                  </svg>                            <HeartSwitch size="sm" inactiveTrackFillColor="#cffafe" inactiveTrackStrokeColor="#22d3ee"
+                  </svg> <HeartSwitch size="sm" inactiveTrackFillColor="#cffafe" inactiveTrackStrokeColor="#22d3ee"
                     activeTrackFillColor="#06b6d4"
                     activeTrackStrokeColor="#0891b2"
                     inactiveThumbColor="#ecfeff"
