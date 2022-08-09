@@ -41,7 +41,7 @@ function Register() {
     event.preventDefault();
     try {
       const { data } = await axios.post(
-        process.env.REACT_APP_SERVER+'auth/register',
+        process.env.REACT_APP_SERVER+'/auth/register',
         {
           ...values,
         },
