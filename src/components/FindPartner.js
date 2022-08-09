@@ -26,14 +26,15 @@ export default function FindPartner() {
   ]);
   useEffect(() => {
     async function findUsers() {
+      console.log(process.env.REACT_APP_SERVER +"/users");
       await axios.get(process.env.REACT_APP_SERVER +"/users")
-      .then((res) => res.json())
       .then((data) => {
         setUsers(data)})
         .catch((error) => console.log(error))
       }
     findUsers();
   }, []);
+  console.log("----------" ,users);
 
   return (
     <>
@@ -45,6 +46,7 @@ export default function FindPartner() {
           <Map />
         </div>
         <div className='container-child'>
+          console.log("----------" ,users);
           {users && users.map(user =>
             <ul style={{ listStyle: 'none' }}>
               <li className='userList'>
