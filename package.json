@@ -1,6 +1,9 @@
 {
   "name": "walking-tales",
-  "version": "0.1.0",
+  "version": "1.0.0",
+  "engines": {
+    "node": "16.x"
+  },
   "private": true,
   "dependencies": {
     "@anatoliygatt/heart-switch": "^1.0.3",

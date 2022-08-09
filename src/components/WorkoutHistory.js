@@ -46,8 +46,6 @@ return(
          <div className="col-sm-6 md=auto">
          <br></br>
          &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;                
-         &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;                
-         &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;                
          <Button  variant="Secondary" onClick={() => setData(dataD)}>Daily</Button>
          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
          <Button  variant="Secondary" onClick={() => setData(dataW)}>Weekly</Button>
@@ -60,10 +58,10 @@ return(
                   theme={VictoryTheme.material}
                   domainPadding={35}
                   width="500"
-                  // animate={{
-                  //   duration: 1000,
-                  //   onLoad: { duration: 500 }
-                  // }}
+                  animate={{
+                    duration: 1000,
+                    onLoad: { duration: 500 }
+                  }}
                 >  
                   <VictoryAxis dependentAxis
                     domain={{y: [0, 400]}}
