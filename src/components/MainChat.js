@@ -4,7 +4,7 @@ import { useState, useContext } from "react";
 import Chat from "./Chat";
 import { UserContext } from "../context/UserContext";
 
-const socket = io.connect("http://localhost:9000/");
+const socket = io.connect("process.env.REACT_APP_SERVER/");
 
 socket.onAny((event, ...args) => {
   console.log(event, args);

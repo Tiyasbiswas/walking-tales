@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import Map from './Map';
@@ -6,7 +6,9 @@ import { Link } from 'react-router-dom'
 import { UserContext } from "../context/UserContext";
 import Button from 'react-bootstrap/Button';
 import { HeartSwitch } from '@anatoliygatt/heart-switch';
-import './styles.css'
+import './styles.css';
+import axios from 'axios';
+
 
 
 
@@ -16,12 +18,23 @@ export default function FindPartner() {
   const [checked, setChecked] = useState(true);
 
   const [users, setUsers] = useState([
-    { id: 1, firstName: 'Frank', lastName: 'Murphy', email: 'frank.murphy@test.com', role: 'User' },
-    { id: 2, firstName: 'Vic', lastName: 'Reynolds', email: 'vic.reynolds@test.com', role: 'Admin' },
-    { id: 3, firstName: 'Gina', lastName: 'Jabowski', email: 'gina.jabowski@test.com', role: 'Admin' },
-    { id: 4, firstName: 'Jessi', lastName: 'Glaser', email: 'jessi.glaser@test.com', role: 'User' },
-    { id: 5, firstName: 'Jay', lastName: 'Bilzerian', email: 'jay.bilzerian@test.com', role: 'User' }
+    // { id: 1, firstName: 'Frank', lastName: 'Murphy', email: 'frank.murphy@test.com', role: 'User' },
+    // { id: 2, firstName: 'Vic', lastName: 'Reynolds', email: 'vic.reynolds@test.com', role: 'Admin' },
+    // { id: 3, firstName: 'Gina', lastName: 'Jabowski', email: 'gina.jabowski@test.com', role: 'Admin' },
+    // { id: 4, firstName: 'Jessi', lastName: 'Glaser', email: 'jessi.glaser@test.com', role: 'User' },
+    // { id: 5, firstName: 'Jay', lastName: 'Bilzerian', email: 'jay.bilzerian@test.com', role: 'User' }
   ]);
+  useEffect(() => {
+    async function findUsers() {
+      await axios.get(process.env.REACT_APP_SERVER +"/users");
+      
+      .then((res) => res.json())
+      .then((data) => {
+        setUsers(data)})
+        .catch((error) => console.log(error))
+      }
+    findUsers();
+  }, []);
 
   return (
     <>
@@ -61,13 +74,7 @@ export default function FindPartner() {
             </ul>
           )}
         </div>
-        {/* <div>
-        <Link to="/chat">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat" viewBox="0 0 16 16">
-          <path d="M2.678 11.894a1 1 0 0 1 .287.801 10.97 10.97 0 0 1-.398 2c1.395-.323 2.247-.697 2.634-.893a1 1 0 0 1 .71-.074A8.06 8.06 0 0 0 8 14c3.996 0 7-2.807 7-6 0-3.192-3.004-6-7-6S1 4.808 1 8c0 1.468.617 2.83 1.678 3.894zm-.493 3.905a21.682 21.682 0 0 1-.713.129c-.2.032-.352-.176-.273-.362a9.68 9.68 0 0 0 .244-.637l.003-.01c.248-.72.45-1.548.524-2.319C.743 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.52.263-1.639.742-3.468 1.105z"/>
-          </svg>
-        </Link>
-        </div> */}
+       
       </div>
       <Footer />
     </>

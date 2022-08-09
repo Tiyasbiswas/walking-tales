@@ -48,7 +48,6 @@ export default function UserProfile() {
     console.log("saveroute: ", destination);
     navigate("/findpartner", { state: { startpoint: currentLoc, destinationpoint: destination } });
   };
-//setValues({ ...values, [e.target.name]: e.target.value })
 
   //======================================/|\/|\=====================================================
 
@@ -72,7 +71,6 @@ export default function UserProfile() {
                   <Dropdown.Item eventKey="Cycling">Cycling</Dropdown.Item>
                 </DropdownButton>
                 <br/>
-                {/* <h6>You have selected&nbsp;{setvalue}</h6> */}
               </div>
             </div><div  className='col-sm-4'>
             <div className='findworkdistory'>
@@ -94,13 +92,7 @@ export default function UserProfile() {
           </div>
           <div className='routes-activity-map'>
             <div className='row'>
-              {/* <div className='col-sm-6'>
-                <DropdownButton title="Saved Routes" id="dropdown-menu-align-left" onSelect={handleSelectedRoutes} >
-                  <Dropdown.Item eventKey="Necker" >Necker</Dropdown.Item>
-                  <Dropdown.Item eventKey="WaltBierGarten">WaltBierGarten</Dropdown.Item>
-                  <Dropdown.Item eventKey="Osterburg">Osterburg</Dropdown.Item>
-                </DropdownButton>
-              </div> */}
+            
               <div className='col-sm-6'>
                 <Button type="button" variant = "info" id="addnew-routes-align-right" onClick={() => setShowWindow(true)} >
                 Add new route

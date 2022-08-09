@@ -13,13 +13,11 @@ export default function About() {
     <img src=""/>
     </div>
     <div className='col-md-4'>
-        <p> WalkingTales might seem like a Story but its started from introvert weightt loss journey. 
-            You might even wonder what is there in this about page.</p>
-<p>
-            WalkingTales began on the campus of the Bootcamp of Berlin by the hand of the Bootcamps's instructor, Chrishtopher Selley. 
+  <p> Started as part of a Bootcamp project in Berlin, WalkingTales takes you on a journey where you connect people through activities. It is a place where you not only share your journey but also motivate many others towards a healthy life.
+
+Excited? Then start your journey here ...</p> 
 
 
-            but WalkingTales is all about the creating a better life in this climate change with creating new frinds in your being healthy journey Stay healthy Stay happy !!</p>
      </div>
  </div>
 </div>
