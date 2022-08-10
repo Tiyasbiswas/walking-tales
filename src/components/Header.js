@@ -13,12 +13,10 @@ import {UserContext} from "../context/UserContext";
 
 export default function Header() {
   const {user, setUser} = useContext(UserContext)
-  console.log("hello", user)
+  //console.log("hello", user)
   const [show, setShow] = useState(false);
   const [cookies] = useCookies([]);
-  //const [user, setUser] = useState(null);
   const navigate = useNavigate();
-  // const { setUser } = useContext(UserContext);
   const [error, setError] = useState(null);
 
   useEffect(() => {
@@ -35,12 +33,14 @@ export default function Header() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
+      console.log(process.env.REACT_APP_SERVER+'/auth/login')
+
       const { data } = await axios.post(
         process.env.REACT_APP_SERVER+'/auth/login',
         {
           ...values,
         },
-        { withCredentials: true }
+        { withCredentials: false }
       );
       if (data) {
         if (data.errors) {
@@ -67,7 +67,7 @@ export default function Header() {
   const handleLogout = async (e) => {
      e.preventDefault();
      if(user !== "null")
-     setUser(null)
+     setUser(null);
      navigate("/");
   }
   

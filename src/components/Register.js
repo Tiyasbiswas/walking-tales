@@ -7,7 +7,6 @@ import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Row from 'react-bootstrap/Row';
 import axios from "axios";
-// import { addUserToLocalStorage } from "../utils/localStorage";
 import { ToastContainer, toast } from "react-toastify";
 import { useCookies } from "react-cookie";
 import { Link, useNavigate } from "react-router-dom";
@@ -39,7 +38,10 @@ function Register() {
 
     setValidated(true);
     event.preventDefault();
+    console.log("registered values",values);
+
     try {
+      console.log( process.env.REACT_APP_SERVER+'/auth/register')
       const { data } = await axios.post(
         process.env.REACT_APP_SERVER+'/auth/register',
         {
@@ -54,8 +56,7 @@ function Register() {
           if (email) generateError(email);
           else if (password) generateError(password);
         } else {
-          // console.log(`Hi There! ${data.username}`)
-          // addUserToLocalStorage(data);
+         
            navigate("/userprofile");
         }
       }
@@ -69,7 +70,6 @@ function Register() {
         <Header />
         <div className="container rounded shadow">
           <br/>
-          {/* <h2 style={{ color: "#073648" }}>Please provide us with the following details to become a member.</h2> */}
           <br/>
     <Form onSubmit={(e) => handleSubmit(e)}>
       <Row className="mb-3">
@@ -148,7 +148,7 @@ function Register() {
         <Form.Group as={Col} md="6" controlId="validationCustom03">
         <br/>
           <Form.Label>City</Form.Label>
-          <Form.Control type="text" placeholder="City" name="city" required onChange={(e) =>
+          <Form.Control type="text" placeholder="city" name="city" required onChange={(e) =>
               setValues({ ...values, [e.target.name]: e.target.value })
             } />
           <Form.Control.Feedback type="invalid">
