@@ -46,7 +46,10 @@ export default function UserProfile() {
   const addnewroutes = (event) => {
     setSaveroute((prev) => ({ ...prev, [event.target.name]: destination}));
     console.log("saveroute: ", destination);
-    navigate("/findpartner", { state: { startpoint: currentLoc, destinationpoint: destination } });
+    //navigate("/findpartner", { state: { startpoint: currentLoc, destinationpoint: destination } });
+     navigate("/findfriends", { state: { startpoint: currentLoc, destinationpoint: destination } });
+
+    
   };
 
   //======================================/|\/|\=====================================================

@@ -34,7 +34,7 @@ export default function FindPartner() {
     <>
       <Header />
       <div className='container'>
-        <h5>Hello,{user.username}</h5>
+        {/* <h5>Hello,{user.username}</h5> */}
 
         <div className='map-details'>
           <Map />

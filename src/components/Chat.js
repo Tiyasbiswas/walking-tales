@@ -1,78 +1,72 @@
-import React, { useEffect, useState } from "react";
-import ScrollToBottom from "react-scroll-to-bottom";
+import TextField from "@material-ui/core/TextField"
+import React, { useEffect, useRef, useState, useContext } from "react"
+import io from "socket.io-client"
+import { UserContext } from "../context/UserContext";
 
-function Chat({ socket, username, room }) {
-  const [currentMessage, setCurrentMessage] = useState("");
-  const [messageList, setMessageList] = useState([]);
+function Chat() {
+    const { user, setUser } = useContext(UserContext)
+    const [ state, setState ] = useState({ message: "", name: user.username})
+    const [ chat, setChat ] = useState([])
 
-  const sendMessage = async () => {
-    if (currentMessage !== "") {
-      const messageData = {
-        room: room,
-        author: username,
-        message: currentMessage,
-        time:
-          new Date(Date.now()).getHours() +
-          ":" +
-          new Date(Date.now()).getMinutes(),
-      };
+    const socketRef = useRef()
 
-      await socket.emit("send_message", messageData);
-      setMessageList((list) => [...list, messageData]);
-      setCurrentMessage("");
+    useEffect(
+        () => {
+            socketRef.current = io.connect(process.env.REACT_APP_SERVER)
+            socketRef.current.on("message", ({name, message }) => {
+                setChat([ ...chat, {name, message} ])
+            })
+            return () => socketRef.current.disconnect()
+        },
+        [ chat ]
+    )
+
+    const onTextChange = (e) => {
+        setState({ ...state, [e.target.name]: e.target.value })
     }
-  };
 
-  useEffect(() => {
-    socket.on("receive_message", (data) => {
-      console.log("hi",data)
-      setMessageList((list) => [...list, data]);
-    });
-  }, [socket]);
+    const onMessageSubmit = (e) => {
+        const {name, message } = state
+        socketRef.current.emit("message", {name, message })
+        e.preventDefault()
+        setState({ message: "",name})
+    }
 
-  return (
-    <div className="chat-window">
-      <div className="chat-header">
-        <p>Live Chat</p>
-      </div>
-      <div className="chat-body">
-        <ScrollToBottom className="message-container">
-          {messageList.map((messageContent) => {
-            return (
-              <div
-                className="message"
-                id={username === messageContent.author ? "you" : "other"}
-              >
-                <div>
-                  <div className="message-content">
-                    <p>{messageContent.message}</p>
-                  </div>
-                  <div className="message-meta">
-                    <p id="time">{messageContent.time}</p>
-                    <p id="author">{messageContent.author}</p>
-                  </div>
+    const renderChat = () => {
+        return chat.map(({name, message }, index) => (
+            <div key={index}>
+                <h3>
+                    {name}: <span>{message}</span>
+                </h3>
+            </div>
+        ))
+    }
+
+    return (
+        <div className="card-chat">
+            <form onSubmit={onMessageSubmit}>
+                <h1>Chat room</h1>
+                <div className="name-field">
+                    <TextField name="name" onChange={(e) => onTextChange(e)} value={user.username} label="Name" />
                 </div>
-              </div>
-            );
-          })}
-        </ScrollToBottom>
-      </div>
-      <div className="chat-footer">
-        <input
-          type="text"
-          value={currentMessage}
-          placeholder="Hey..."
-          onChange={(event) => {
-            setCurrentMessage(event.target.value);
-          }}
-          onKeyPress={(event) => {
-            event.key === "Enter" && sendMessage();
-          }}
-        />
-        <button onClick={sendMessage}>&#9658;</button>
-      </div>
-    </div>
-  );
+                <div>
+                    <TextField
+                        name="message"
+                        onChange={(e) => onTextChange(e)}
+                        value={state.message}
+                        id="outlined-multiline-static"
+                        variant="outlined"
+                        label="Message"
+                    />
+                </div>
+                <button>send</button>
+            </form>
+            <div className="render-chat">
+                <h1>chat log</h1>  
+                {renderChat()}
+            </div>
+        </div>
+    )
 }
 
-export default Chat;
+export default Chat
