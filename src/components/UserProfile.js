@@ -46,8 +46,7 @@ export default function UserProfile() {
   const addnewroutes = (event) => {
     setSaveroute((prev) => ({ ...prev, [event.target.name]: destination}));
     console.log("saveroute: ", destination);
-    //navigate("/findpartner", { state: { startpoint: currentLoc, destinationpoint: destination } });
-     navigate("/findfriends", { state: { startpoint: currentLoc, destinationpoint: destination } });
+    navigate("/findpartner", { state: { startpoint: currentLoc, destinationpoint: destination } });
 
     
   };
@@ -76,10 +75,10 @@ export default function UserProfile() {
                 <br/>
               </div>
             </div><div  className='col-sm-4'>
-            <div className='findworkdistory'>
+            <div >
             <br/><br/>
-          <Button type="button" variant="info">
-            <Link to='/workouthistory'>Show history</Link>
+          <Button type="button" style={{ background: "#073648",color:"white"}}>
+            <Link  style={{color:"white"}}to='/workouthistory'>Show history</Link>
           </Button>
         </div></div>
             <div className='col-sm-4'>
@@ -111,7 +110,7 @@ export default function UserProfile() {
               </div>
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <div className='col-sm-3'> 
-                <Button type="button" variant = "info" id="find-your-mate" onClick={addnewroutes}  >
+                <Button type="button" style={{ background: "#073648"}} id="find-your-mate" onClick={addnewroutes}  >
                   Find mate
                 </Button>
               </div>

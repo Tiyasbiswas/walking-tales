@@ -2,9 +2,11 @@ import TextField from "@material-ui/core/TextField"
 import React, { useEffect, useRef, useState, useContext } from "react"
 import io from "socket.io-client"
 import { UserContext } from "../context/UserContext";
+import Header from "./Header";
 
 function Chat() {
     const { user, setUser } = useContext(UserContext)
+    
     const [ state, setState ] = useState({ message: "", name: user.username})
     const [ chat, setChat ] = useState([])
 
@@ -43,10 +45,20 @@ function Chat() {
     }
 
     return (
+        <>
+        <div><Header/>
+</div>
         <div className="card-chat">
             <form onSubmit={onMessageSubmit}>
-                <h1>Chat room</h1>
-                <div className="name-field">
+           <center>  
+            <div className="render-chat justify-content-center" >  
+               <h1>Chat</h1>  
+               <hr/>
+               {renderChat()}
+           </div></center>
+          
+            <br/>
+                <div className="name-field d-none">
                     <TextField name="name" onChange={(e) => onTextChange(e)} value={user.username} label="Name" />
                 </div>
                 <div>
@@ -57,15 +69,21 @@ function Chat() {
                         id="outlined-multiline-static"
                         variant="outlined"
                         label="Message"
+                        style={{ minWidth:"550px"}}
                     />
                 </div>
-                <button>send</button>
+                <br/>
+                <button style={{ color: "white", background: "#073648"
+                }}>send</button>
+
             </form>
-            <div className="render-chat">
-                <h1>chat log</h1>  
+            {/* <div className="render-chat">
+                <h1>Chat</h1>  
                 {renderChat()}
-            </div>
+            </div> */}
         </div>
+        
+        </>
     )
 }
 

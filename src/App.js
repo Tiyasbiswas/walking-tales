@@ -11,7 +11,7 @@ import Home from './Home';
 import Contact from './components/Contact';
 import Feedbackdata from './components/Feedbackdata';
 import About from './components/About';
-import FindFriends from './components/FindFriends';
+
 
 
 function App() { 
@@ -31,7 +31,6 @@ function App() {
         <Route path='/contact' element={<Contact/>}/>   
         <Route path='/feedbackdata' element={<Feedbackdata/>}/>       
         <Route path='/about' element={<About/>}/>    
-        <Route path='/findfriends' element={<FindFriends/>}/>
 
 
     
